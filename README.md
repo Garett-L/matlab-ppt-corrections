@@ -4,15 +4,14 @@
 ## 一、极限、导数
 ### 第5页
 ```diff
-#原：
+%原：
 clear
 syms x;
 ! g=sym('cos(x+sin(y(x)))=sin(y(x))');
 f=diff(g,x)
 ```
-
 ```diff
-#应改为：
+%应改为：
 clear
 syms x;
 + g=str2sym('cos(x+sin(y(x)))=sin(y(x))');
@@ -33,13 +32,13 @@ f=diff(g,x)
 相应的，第11页中的练习1：`I=dblquad(‘fxy’,-1,1,-1,1)`应改为`I = integral2(fxy,-1,1,-1,1);`  
 相应的，第11页中的练习2，而且第一行的`*`应改为`.*`:
 ```diff
-#原：
+%原：
 ! F = @(x,y,z)y*sin(x)+z*cos(x);
 ! Q = triplequad(F,0,pi,0,1,-1,1);
 ! Q
 ```
 ```diff
-#应改为：
+%应改为：
 + F = @(x,y,z)y.*sin(x)+z.*cos(x);
 + Q = integral3(F,0,pi,0,1,-1,1);
 + disp(Q)
